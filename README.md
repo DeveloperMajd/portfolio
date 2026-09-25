@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# developermajd.com
 
-## Getting Started
-
-First, run the development server:
+Personal portfolio of Majd Kalthoum. Next.js 16 (App Router, static), Tailwind CSS v4, Motion, English and German.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000 (redirects to /en or /de)
+npm run build   # every page is prerendered
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+| --- | --- |
+| All page text, EN and DE | `app/[lang]/dictionaries/en.ts`, `de.ts` (`de` is typed against `en`, so a missing key fails the build) |
+| Email, GitHub, LinkedIn, CV path | `lib/site.ts` |
+| Colours, fonts, radii | `app/globals.css` (tokens copied from RTM's Signal design system) |
+| Hero chat intro | `components/hero/ChatIntro.tsx` |
+| Designo architecture diagram | `components/work/DesignoDiagram.tsx` |
+| Theme and first-visit flags | `components/BootScript.tsx` |
+| `/` → `/en` or `/de` | `proxy.ts` (cookie from the language switch, else `Accept-Language`) |
+| Images and CV | `public/images`, `public/cv` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Motion
 
-## Learn More
+- Hero: typing indicator, then chat bubbles, once per browser session.
+- Designo diagram: a request dot plays once when it scrolls into view.
+- "How it's built" disclosures, the mobile menu and the theme icon animate on click.
+- With reduced motion turned on in the OS, everything shows in its final state immediately.
 
-To learn more about Next.js, take a look at the following resources:
+## Before going live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Optional: add an English CV and switch `site.cv` per locale; switch to a domain email in `lib/site.ts`.
+- Deploy on Vercel and point developermajd.com at it.

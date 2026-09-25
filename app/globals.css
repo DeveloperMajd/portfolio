@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+ * Colour tokens are RTM's "Signal" design system (rtm_frontend/src/styles/
+ * tailwind.css), Porcelain (light) and Obsidian (dark), so the portfolio and
+ * its main project read as one family. The head script in app/[lang]/layout
+ * always sets data-theme; the media query below only covers visitors
+ * without JavaScript.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --c-rail: #e8eaf1;
+  --c-list: #f3f4f8;
+  --c-stage: #fbfbfd;
+  --c-raised: #ffffff;
+  --c-raised-2: #eff0f6;
+
+  --c-fg: #14151c;
+  --c-fg-2: #4d5165;
+  --c-fg-3: #5d6278;
+
+  --c-line: rgb(20 22 45 / 0.09);
+  --c-line-2: rgb(20 22 45 / 0.16);
+  --c-line-3: rgb(20 22 45 / 0.28);
+  --c-line-accent: rgb(91 61 245 / 0.4);
+
+  --c-accent: #5b3df5;
+  --c-accent-solid: #5b3df5;
+  --c-accent-soft: rgb(91 61 245 / 0.09);
+  --c-accent-text: #3d22c9;
+  --c-focus: #5b3df5;
+  --c-on-accent: #ffffff;
+
+  --c-out: #e6e1ff;
+  --c-out-fg: #1c1648;
+
+  --c-shadow-e3: 0 18px 40px rgb(16 24 40 / 0.18);
+
+  /* Portfolio surfaces, mapped onto the Signal ones per theme. */
+  --c-page: var(--c-stage);
+  --c-card: var(--c-raised);
+  --c-inset: var(--c-list);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --c-rail: #08090d;
+  --c-list: #0d0e14;
+  --c-stage: #111219;
+  --c-raised: #171924;
+  --c-raised-2: #1d2030;
+
+  --c-fg: #eceef6;
+  --c-fg-2: #a9adc2;
+  --c-fg-3: #8387a1;
+
+  --c-line: rgb(255 255 255 / 0.07);
+  --c-line-2: rgb(255 255 255 / 0.12);
+  --c-line-3: rgb(255 255 255 / 0.2);
+  --c-line-accent: rgb(139 120 255 / 0.38);
+
+  --c-accent: #8b78ff;
+  --c-accent-solid: #6c4dff;
+  --c-accent-soft: rgb(139 120 255 / 0.14);
+  --c-accent-text: #c9c0ff;
+  --c-focus: #a596ff;
+  --c-on-accent: #ffffff;
+
+  --c-out: #2e2873;
+  --c-out-fg: #f5f3ff;
+
+  --c-shadow-e3: 0 18px 40px rgb(0 0 0 / 0.6);
+
+  --c-page: var(--c-list);
+  --c-card: var(--c-raised);
+  --c-inset: var(--c-rail);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
+    --c-rail: #08090d;
+    --c-list: #0d0e14;
+    --c-stage: #111219;
+    --c-raised: #171924;
+    --c-raised-2: #1d2030;
+
+    --c-fg: #eceef6;
+    --c-fg-2: #a9adc2;
+    --c-fg-3: #8387a1;
+
+    --c-line: rgb(255 255 255 / 0.07);
+    --c-line-2: rgb(255 255 255 / 0.12);
+    --c-line-3: rgb(255 255 255 / 0.2);
+    --c-line-accent: rgb(139 120 255 / 0.38);
+
+    --c-accent: #8b78ff;
+    --c-accent-solid: #6c4dff;
+    --c-accent-soft: rgb(139 120 255 / 0.14);
+    --c-accent-text: #c9c0ff;
+    --c-focus: #a596ff;
+    --c-on-accent: #ffffff;
+
+    --c-out: #2e2873;
+    --c-out-fg: #f5f3ff;
+
+    --c-shadow-e3: 0 18px 40px rgb(0 0 0 / 0.6);
+
+    --c-page: var(--c-list);
+    --c-card: var(--c-raised);
+    --c-inset: var(--c-rail);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-page: var(--c-page);
+  --color-card: var(--c-card);
+  --color-inset: var(--c-inset);
+  --color-raised-2: var(--c-raised-2);
+  --color-fg: var(--c-fg);
+  --color-fg-2: var(--c-fg-2);
+  --color-fg-3: var(--c-fg-3);
+  --color-line: var(--c-line);
+  --color-line-2: var(--c-line-2);
+  --color-line-3: var(--c-line-3);
+  --color-line-accent: var(--c-line-accent);
+  --color-accent: var(--c-accent);
+  --color-accent-solid: var(--c-accent-solid);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-accent-text: var(--c-accent-text);
+  --color-on-accent: var(--c-on-accent);
+  --color-out: var(--c-out);
+  --color-out-fg: var(--c-out-fg);
+
+  --shadow-e3: var(--c-shadow-e3);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, Menlo, monospace;
+  --font-display: var(--font-bricolage), var(--font-geist), sans-serif;
+
+  /* One radius rule: controls and tags, cards and media, chat bubbles. */
+  --radius-control: 10px;
+  --radius-card: 20px;
+  --radius-bubble: 18px;
+}
+
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1264px;
+  padding-inline: 1.5rem;
+}
+
+@utility dots {
+  background-image: radial-gradient(var(--c-line-2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background: var(--c-page);
+    color: var(--c-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--c-accent-solid);
+    color: var(--c-on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--c-focus);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 3rem;
+    padding-inline: 1.25rem;
+    border-radius: var(--radius-control);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      background-color 150ms,
+      border-color 150ms,
+      transform 100ms;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--c-accent-solid);
+    color: var(--c-on-accent);
+  }
+  .btn-primary:hover {
+    background: color-mix(in oklab, var(--c-accent-solid) 86%, black);
+  }
+  .btn-secondary {
+    border: 1px solid var(--c-line-2);
+    background: var(--c-card);
+    color: var(--c-fg);
+    font-weight: 500;
+  }
+  .btn-secondary:hover {
+    border-color: var(--c-line-3);
+  }
+}
+
+/*
+ * Hero intro: the head script sets data-intro on a first visit (and only
+ * when reduced motion is off), so these start hidden only when ChatIntro is
+ * about to reveal them. Without JS or on a repeat visit they render as-is.
+ */
+[data-intro] .intro-step {
+  opacity: 0;
+}
+.intro-typing {
+  opacity: 0;
+}
+[data-intro] .intro-typing {
+  opacity: 1;
+}
+[data-intro] .intro-status {
+  opacity: 0;
 }
