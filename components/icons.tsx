@@ -83,6 +83,13 @@ export const CloseIcon = (props: IconProps) => (
   </Icon>
 );
 
+export const CalendarIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <rect x="3" y="4" width="18" height="18" rx="2" />
+    <path d="M16 2v4M8 2v4M3 10h18" />
+  </Icon>
+);
+
 export const ChevronIcon = (props: IconProps) => (
   <Icon {...props}>
     <path d="m6 9 6 6 6-6" />

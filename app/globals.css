@@ -220,6 +220,10 @@
   .btn:active {
     transform: translateY(1px);
   }
+  /* A tight button squeezes its text, never its icon. */
+  .btn > svg {
+    flex-shrink: 0;
+  }
   .btn-primary {
     background: var(--c-accent-solid);
     color: var(--c-on-accent);

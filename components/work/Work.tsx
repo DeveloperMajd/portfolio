@@ -1,11 +1,12 @@
 import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries/en";
 import { site } from "@/lib/site";
+import { ExternalLink } from "../ExternalLink";
 import { ExternalIcon } from "../icons";
 import { DesignoDiagram } from "./DesignoDiagram";
 import { ProjectCard } from "./ProjectCard";
 
-export function Work({ work }: { work: Dictionary["work"] }) {
+export function Work({ work, newTab }: { work: Dictionary["work"]; newTab: string }) {
   const { rtm, designo } = work;
 
   return (
@@ -14,17 +15,19 @@ export function Work({ work }: { work: Dictionary["work"] }) {
         <h2 id="work-title" className="section-title">
           {work.title}
         </h2>
-        <a
+        <ExternalLink
           href={site.github}
+          newTabLabel={newTab}
           className="inline-flex items-center gap-2 border-b border-line-2 pb-1.5 text-[15px] font-medium transition-colors hover:border-fg"
         >
           {work.allRepos}
           <ExternalIcon size={16} />
-        </a>
+        </ExternalLink>
       </div>
 
       <div className="mt-10 flex flex-col gap-6 md:mt-12">
         <ProjectCard
+          newTab={newTab}
           title={rtm.title}
           subtitle={rtm.subtitle}
           description={rtm.description}
@@ -58,6 +61,7 @@ export function Work({ work }: { work: Dictionary["work"] }) {
         />
 
         <ProjectCard
+          newTab={newTab}
           mediaFirst
           title={designo.title}
           subtitle={designo.subtitle}

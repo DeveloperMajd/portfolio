@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ExternalLink } from "../ExternalLink";
 import { ExternalIcon } from "../icons";
 import { BuildDetails } from "./BuildDetails";
 
@@ -13,9 +14,10 @@ type Props = {
   details: { label: string; items: string[] };
   media: ReactNode;
   mediaFirst?: boolean;
+  newTab: string;
 };
 
-export function ProjectCard({ title, subtitle, description, tags, note, live, code, details, media, mediaFirst = false }: Props) {
+export function ProjectCard({ title, subtitle, description, tags, note, live, code, details, media, mediaFirst = false, newTab }: Props) {
   return (
     <article
       className={`grid gap-8 rounded-card border border-line bg-card p-5 sm:p-8 lg:gap-14 lg:p-12 ${
@@ -44,14 +46,14 @@ export function ProjectCard({ title, subtitle, description, tags, note, live, co
         {note && <p className="text-sm leading-relaxed text-fg-3">{note}</p>}
 
         <div className="flex flex-wrap gap-2.5">
-          <a href={live.href} className="btn btn-primary h-11 px-4">
+          <ExternalLink href={live.href} newTabLabel={newTab} className="btn btn-primary h-11 px-4">
             {live.label}
             <ExternalIcon size={16} />
-          </a>
+          </ExternalLink>
           {code.map((link) => (
-            <a key={link.href} href={link.href} className="btn btn-secondary h-11 px-4">
+            <ExternalLink key={link.href} href={link.href} newTabLabel={newTab} className="btn btn-secondary h-11 px-4">
               {link.label}
-            </a>
+            </ExternalLink>
           ))}
         </div>
 

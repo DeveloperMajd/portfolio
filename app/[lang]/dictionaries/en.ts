@@ -121,6 +121,15 @@ export const en = {
   experience: {
     title: "Where I’ve worked",
     now: "now",
+    // Excerpt from Christian Graumann's LinkedIn recommendation (19 Aug 2026), translated.
+    recommendation: {
+      quote:
+        "“Majd was always helpful, easy to work with, and at the same time someone a less experienced developer could learn a lot from. […] I remember our time together very fondly and can recommend Majd without reservation, both professionally and personally.”",
+      name: "Christian Graumann",
+      role: "Software Engineer, worked with Majd at Aleks & Shantu",
+      note: "Translated from German",
+      link: "Full recommendation on LinkedIn",
+    },
     jobs: [
       {
         start: "04/2025",
@@ -208,9 +217,13 @@ export const en = {
     alsoTitle: "Also worked with:",
     also: ["React Native", "Angular", "Python and Django", "GraphQL", "Socket.io", "JWT", "MySQL", "Gatsby", "GitLab"],
   },
+  a11y: {
+    newTab: "(opens in a new tab)",
+  },
   contact: {
     title: "Hiring for a fullstack or frontend role?",
-    body: "I’m open to full-time roles in Berlin or remote. Email is the fastest way to reach me, and I’m happy to walk you through any of the projects above.",
+    body: "I’m open to full-time roles in Berlin or remote. Email me or book a 30-minute call, and I’m happy to walk you through any of the projects above.",
+    book: "Book a 30-minute call",
     facts: [
       { label: "Based in", value: "Berlin, Germany" },
       { label: "Languages", value: "German (C1), English (C1), Arabic (native)" },

@@ -1,6 +1,11 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries/en";
+import { site } from "@/lib/site";
+import { ExternalLink } from "./ExternalLink";
 
-export function Experience({ experience }: { experience: Dictionary["experience"] }) {
+export function Experience({ experience, newTab }: { experience: Dictionary["experience"]; newTab: string }) {
+  const rec = experience.recommendation;
+  const source = `${site.linkedin}/details/recommendations/`;
+
   return (
     <section id="experience" aria-labelledby="experience-title" className="wrap pt-28 md:pt-36">
       <h2 id="experience-title" className="section-title">
@@ -34,6 +39,37 @@ export function Experience({ experience }: { experience: Dictionary["experience"
           </li>
         ))}
       </ol>
+
+      <figure className="mt-12 flex max-w-248 flex-col gap-6 md:mt-16">
+        <blockquote cite={source}>
+          <p className="font-display text-[clamp(1.25rem,1.05rem+1vw,1.875rem)] leading-snug font-medium tracking-[-0.015em] text-pretty text-fg">
+            {rec.quote}
+          </p>
+        </blockquote>
+        <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-3">
+          {/* Initials stay beside the name; only the link wraps below on phones. */}
+          <span className="flex items-center gap-4">
+            <span
+              aria-hidden="true"
+              className="grid size-11 shrink-0 place-items-center rounded-full bg-accent-soft font-mono text-sm font-medium text-accent-text"
+            >
+              CG
+            </span>
+            <span className="flex min-w-0 flex-col">
+              <span className="text-[15px] font-semibold text-fg">{rec.name}</span>
+              <span className="text-sm text-fg-3">{rec.role}</span>
+              {rec.note && <span className="text-sm text-fg-3 italic">{rec.note}</span>}
+            </span>
+          </span>
+          <ExternalLink
+            href={source}
+            newTabLabel={newTab}
+            className="text-sm font-medium text-fg-2 underline decoration-line-3 underline-offset-4 transition-colors hover:text-fg sm:ml-auto"
+          >
+            {rec.link}
+          </ExternalLink>
+        </figcaption>
+      </figure>
     </section>
   );
 }

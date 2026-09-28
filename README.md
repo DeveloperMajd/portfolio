@@ -14,7 +14,7 @@ npm run lint
 | What | Where |
 | --- | --- |
 | All page text, EN and DE | `app/[lang]/dictionaries/en.ts`, `de.ts` (`de` is typed against `en`, so a missing key fails the build) |
-| Email, GitHub, LinkedIn, CV path | `lib/site.ts` |
+| Email, GitHub, LinkedIn, Calendly, CV per language | `lib/site.ts` |
 | Colours, fonts, radii | `app/globals.css` (tokens copied from RTM's Signal design system) |
 | Hero chat intro | `components/hero/ChatIntro.tsx` |
 | Designo architecture diagram | `components/work/DesignoDiagram.tsx` |
@@ -29,7 +29,7 @@ npm run lint
 - "How it's built" disclosures, the mobile menu and the theme icon animate on click.
 - With reduced motion turned on in the OS, everything shows in its final state immediately.
 
-## Before going live
+## Deployment
 
-- Optional: add an English CV and switch `site.cv` per locale; switch to a domain email in `lib/site.ts`.
-- Deploy on Vercel and point developermajd.com at it.
+Vercel builds every push to `main` and serves it at https://developermajd.com (www redirects to it).
+Other branches get their own preview URLs.

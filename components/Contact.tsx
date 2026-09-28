@@ -1,8 +1,15 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries/en";
 import { site } from "@/lib/site";
-import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
+import { ExternalLink } from "./ExternalLink";
+import { CalendarIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
 
-export function Contact({ contact, cvLabel }: { contact: Dictionary["contact"]; cvLabel: string }) {
+type Props = {
+  contact: Dictionary["contact"];
+  cv: { href: string; label: string; lang: string };
+  newTab: string;
+};
+
+export function Contact({ contact, cv, newTab }: Props) {
   return (
     <section id="contact" aria-labelledby="contact-title" className="wrap pt-28 pb-24 md:pt-36 md:pb-32">
       <div className="grid gap-10 border-t border-line pt-12 md:pt-16 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-end lg:gap-16">
@@ -29,18 +36,24 @@ export function Contact({ contact, cvLabel }: { contact: Dictionary["contact"]; 
             <MailIcon size={20} />
             <span className="truncate">{site.email}</span>
           </a>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <a href={site.linkedin} className="btn btn-secondary h-13">
+          {/* A plain link, not Calendly's embed: no third-party script or cookies until someone clicks. */}
+          <ExternalLink href={site.calendly} newTabLabel={newTab} className="btn btn-secondary h-16 justify-start gap-3 px-5 text-base">
+            <CalendarIcon size={20} />
+            {contact.book}
+          </ExternalLink>
+          {/* Sized to their labels: equal thirds are too narrow for "Download CV". */}
+          <div className="grid grid-cols-1 gap-3 sm:flex">
+            <ExternalLink href={site.linkedin} newTabLabel={newTab} className="btn btn-secondary h-13 sm:flex-auto">
               <LinkedInIcon size={17} />
               LinkedIn
-            </a>
-            <a href={site.github} className="btn btn-secondary h-13">
+            </ExternalLink>
+            <ExternalLink href={site.github} newTabLabel={newTab} className="btn btn-secondary h-13 sm:flex-auto">
               <GitHubIcon size={17} />
               GitHub
-            </a>
-            <a href={site.cv} download hrefLang="de" type="application/pdf" className="btn btn-secondary h-13">
+            </ExternalLink>
+            <a href={cv.href} download hrefLang={cv.lang} type="application/pdf" className="btn btn-secondary h-13 sm:flex-auto">
               <DownloadIcon size={17} />
-              {cvLabel}
+              {cv.label}
             </a>
           </div>
         </div>

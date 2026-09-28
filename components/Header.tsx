@@ -45,9 +45,9 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dictionary["nav"] }) 
           <LanguageSwitch current={lang} label={nav.language} />
           <ThemeToggle label={nav.theme} />
           <a
-            href={site.cv}
+            href={site.cv[lang]}
             download
-            hrefLang="de"
+            hrefLang={lang}
             type="application/pdf"
             className="btn btn-secondary hidden h-10 px-4 text-sm lg:inline-flex"
           >
@@ -56,7 +56,7 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dictionary["nav"] }) 
           </a>
           <MobileMenu
             items={items}
-            cv={{ href: site.cv, label: nav.cv }}
+            cv={{ href: site.cv[lang], label: nav.cv, lang }}
             labels={{ nav: nav.primary, open: nav.openMenu, close: nav.closeMenu }}
           />
         </div>

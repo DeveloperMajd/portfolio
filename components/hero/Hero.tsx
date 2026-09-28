@@ -1,10 +1,11 @@
 import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries/en";
 import { site } from "@/lib/site";
+import { ExternalLink } from "../ExternalLink";
 import { GitHubIcon } from "../icons";
 import { ChatIntro } from "./ChatIntro";
 
-export function Hero({ hero }: { hero: Dictionary["hero"] }) {
+export function Hero({ hero, newTab }: { hero: Dictionary["hero"]; newTab: string }) {
   return (
     <section
       id="top"
@@ -30,10 +31,10 @@ export function Hero({ hero }: { hero: Dictionary["hero"] }) {
           <a href="#contact" className="btn btn-primary">
             {hero.contact}
           </a>
-          <a href={site.github} className="btn btn-secondary">
+          <ExternalLink href={site.github} newTabLabel={newTab} className="btn btn-secondary">
             <GitHubIcon />
             GitHub
-          </a>
+          </ExternalLink>
         </div>
       </div>
 

@@ -123,6 +123,15 @@ export const de: Dictionary = {
   experience: {
     title: "Berufserfahrung",
     now: "heute",
+    // Auszug aus Christian Graumanns LinkedIn-Empfehlung (19. Aug. 2026), im Original.
+    recommendation: {
+      quote:
+        "„Majd war immer hilfsbereit, angenehm in der Zusammenarbeit und gleichzeitig jemand, von dem man als weniger erfahrener Entwickler einiges lernen konnte. […] Ich habe die gemeinsame Zeit sehr positiv in Erinnerung und kann Majd sowohl fachlich als auch menschlich uneingeschränkt empfehlen.“",
+      name: "Christian Graumann",
+      role: "Software Engineer, hat mit Majd bei Aleks & Shantu zusammengearbeitet",
+      note: "",
+      link: "Vollständige Empfehlung auf LinkedIn",
+    },
     jobs: [
       {
         start: "04/2025",
@@ -210,9 +219,13 @@ export const de: Dictionary = {
     alsoTitle: "Außerdem gearbeitet mit:",
     also: ["React Native", "Angular", "Python und Django", "GraphQL", "Socket.io", "JWT", "MySQL", "Gatsby", "GitLab"],
   },
+  a11y: {
+    newTab: "(öffnet in neuem Tab)",
+  },
   contact: {
     title: "Sie suchen einen Fullstack- oder Frontend-Entwickler?",
-    body: "Ich bin offen für eine Festanstellung in Berlin oder remote. Am schnellsten erreichen Sie mich per E-Mail, und ich stelle Ihnen gern jedes der Projekte oben im Detail vor.",
+    body: "Ich bin offen für eine Festanstellung in Berlin oder remote. Schreiben Sie mir eine E-Mail oder buchen Sie direkt ein 30-minütiges Gespräch. Ich stelle Ihnen gern jedes der Projekte oben im Detail vor.",
+    book: "30-minütiges Gespräch buchen",
     facts: [
       { label: "Wohnort", value: "Berlin" },
       { label: "Sprachen", value: "Deutsch (C1), Englisch (C1), Arabisch (Muttersprache)" },

@@ -6,7 +6,7 @@ import { CloseIcon, DownloadIcon, MenuIcon } from "./icons";
 
 type Props = {
   items: { href: string; label: string }[];
-  cv: { href: string; label: string };
+  cv: { href: string; label: string; lang: string };
   labels: { nav: string; open: string; close: string };
 };
 
@@ -66,7 +66,7 @@ export function MobileMenu({ items, cv, labels }: Props) {
                 </li>
               ))}
               <li className="pt-5">
-                <a href={cv.href} download onClick={close} className="btn btn-secondary w-full">
+                <a href={cv.href} download hrefLang={cv.lang} type="application/pdf" onClick={close} className="btn btn-secondary w-full">
                   <DownloadIcon size={16} />
                   {cv.label}
                 </a>
