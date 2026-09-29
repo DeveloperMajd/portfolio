@@ -228,7 +228,7 @@ export const de: Dictionary = {
     book: "30-minütiges Gespräch buchen",
     facts: [
       { label: "Wohnort", value: "Berlin" },
-      { label: "Sprachen", value: "Deutsch (C1), Englisch (C1), Arabisch (Muttersprache)" },
+      { label: "Sprachen", value: "Deutsch, Englisch, Arabisch" },
     ],
   },
   notFound: {

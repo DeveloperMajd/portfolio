@@ -226,7 +226,7 @@ export const en = {
     book: "Book a 30-minute call",
     facts: [
       { label: "Based in", value: "Berlin, Germany" },
-      { label: "Languages", value: "German (C1), English (C1), Arabic (native)" },
+      { label: "Languages", value: "German, English, Arabic" },
     ],
   },
   notFound: {
