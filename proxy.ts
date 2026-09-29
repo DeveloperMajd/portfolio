@@ -24,4 +24,6 @@ export function proxy(request: NextRequest) {
 }
 
 // Every page lives under /en or /de; only the bare root needs a redirect.
-export const config = { matcher: "/" };
+// /defaultsite is where IONOS's parking page sends browsers; they cache that
+// page for months, so rescue them here (never back to /, which would loop).
+export const config = { matcher: ["/", "/defaultsite"] };
