@@ -20,7 +20,7 @@ npm run lint
 | Hero chat intro | `components/hero/ChatIntro.tsx` |
 | Designo architecture diagram | `components/work/DesignoDiagram.tsx` |
 | Theme and first-visit flags | `components/BootScript.tsx` |
-| `/` → `/en` or `/de` | `proxy.ts` (cookie from the language switch, else `Accept-Language`) |
+| `/` → `/en` or `/de`, and `/anything` → `/en/anything` or `/de/anything` | `proxy.ts` (cookie from the language switch, else `Accept-Language`) |
 | Images and CV | `public/images`, `public/cv` |
 
 ## Motion

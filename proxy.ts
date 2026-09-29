@@ -19,11 +19,18 @@ function preferredLocale(request: NextRequest): Locale {
   return ranked.map((entry) => entry.lang).find(isLocale) ?? defaultLocale;
 }
 
+// Every page lives under /en or /de, so a path without one gets the
+// visitor's language put in front: /impressum opens /de/impressum, and a typo
+// lands on the site's own 404 page instead of Next's bare one.
 export function proxy(request: NextRequest) {
-  return NextResponse.redirect(new URL(`/${preferredLocale(request)}`, request.url));
+  const { pathname, search } = request.nextUrl;
+  // Where IONOS's parking page sends browsers; they cache that page for
+  // months, so send them to the home page.
+  const rest = pathname === "/" || pathname === "/defaultsite" ? "" : pathname;
+  return NextResponse.redirect(new URL(`/${preferredLocale(request)}${rest}${search}`, request.url));
 }
 
-// Every page lives under /en or /de; only the bare root needs a redirect.
-// /defaultsite is where IONOS's parking page sends browsers; they cache that
-// page for months, so rescue them here (never back to /, which would loop).
-export const config = { matcher: ["/", "/defaultsite"] };
+// Everything except paths that already start with a locale (keep in step with
+// lib/i18n.ts; matchers must be literal), Next internals (/_next, /__nextjs,
+// /_vercel) and files (anything with a dot: /robots.txt, /cv/*.pdf, …).
+export const config = { matcher: ["/((?!(?:en|de)(?:/|$)|_|.*\\.).*)"] };
