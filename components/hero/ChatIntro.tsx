@@ -6,11 +6,11 @@ import { useEffect } from "react";
 type Props = { messages: string[]; typing: string; status: string };
 
 // RTM's typing indicator: four signal bars.
-const BAR_HEIGHTS = [5, 10, 8, 13];
+export const BAR_HEIGHTS = [5, 10, 8, 13];
 const easeOut: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 // Grouped bubbles from one sender get a tighter corner on the sender's side.
-function corners(index: number, count: number) {
+export function corners(index: number, count: number) {
   if (count === 1) return "";
   if (index === 0) return "rounded-bl-md";
   if (index === count - 1) return "rounded-tl-md";

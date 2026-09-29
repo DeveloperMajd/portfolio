@@ -1,22 +1,26 @@
-import Link from "next/link";
+import { NotFoundChat, type NotFoundCopy } from "@/components/NotFoundChat";
+import { locales, type Locale } from "@/lib/i18n";
+import { getDictionary } from "./dictionaries";
 
-// Rendered inside the locale layout, which has no way to pass the locale
-// down to not-found, so the copy is in both languages.
-export default function NotFound() {
-  return (
-    <section className="wrap flex flex-col items-start gap-6 pt-24 pb-8 md:pt-32">
-      <h1 className="section-title">Page not found</h1>
-      <p lang="de" className="text-lg text-fg-2">
-        Seite nicht gefunden.
-      </p>
-      <div className="flex flex-wrap gap-3">
-        <Link href="/en" className="btn btn-primary">
-          Go to the homepage
-        </Link>
-        <Link href="/de" lang="de" className="btn btn-secondary">
-          Zur Startseite
-        </Link>
-      </div>
-    </section>
+// not-found gets no params, so both languages go to the client, which picks
+// one from the URL. Only these few strings are sent, not the dictionaries.
+export default async function NotFound() {
+  const entries = await Promise.all(
+    locales.map(async (lang) => {
+      const dict = await getDictionary(lang);
+      const copy: NotFoundCopy = {
+        ...dict.notFound,
+        typing: dict.hero.typing,
+        links: [
+          { href: `/${lang}`, label: dict.notFound.home },
+          { href: `/${lang}#work`, label: dict.nav.work },
+          { href: `/${lang}#experience`, label: dict.nav.experience },
+          { href: `/${lang}#contact`, label: dict.nav.contact },
+        ],
+      };
+      return [lang, copy] as const;
+    }),
   );
+
+  return <NotFoundChat copy={Object.fromEntries(entries) as Record<Locale, NotFoundCopy>} />;
 }

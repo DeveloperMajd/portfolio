@@ -95,3 +95,10 @@ export const ChevronIcon = (props: IconProps) => (
     <path d="m6 9 6 6 6-6" />
   </Icon>
 );
+
+export const AlertIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 8v4M12 16h.01" />
+  </Icon>
+);

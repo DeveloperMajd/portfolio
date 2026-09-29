@@ -27,6 +27,7 @@ npm run lint
 
 - Hero: typing indicator, then chat bubbles, once per browser session.
 - Designo diagram: a request dot plays once when it scrolls into view.
+- 404 page: the address the visitor typed goes out as a chat message, fails with "Not delivered", and Majd types a reply with links back into the site (CSS only, `components/NotFoundChat.tsx`).
 - "How it's built" disclosures, the mobile menu and the theme icon animate on click.
 - With reduced motion turned on in the OS, everything shows in its final state immediately.
 

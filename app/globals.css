@@ -33,6 +33,7 @@
   --c-accent-text: #3d22c9;
   --c-focus: #5b3df5;
   --c-on-accent: #ffffff;
+  --c-danger: #c72a44;
 
   --c-out: #e6e1ff;
   --c-out-fg: #1c1648;
@@ -69,6 +70,7 @@
   --c-accent-text: #c9c0ff;
   --c-focus: #a596ff;
   --c-on-accent: #ffffff;
+  --c-danger: #ff7a8d;
 
   --c-out: #2e2873;
   --c-out-fg: #f5f3ff;
@@ -105,6 +107,7 @@
     --c-accent-text: #c9c0ff;
     --c-focus: #a596ff;
     --c-on-accent: #ffffff;
+    --c-danger: #ff7a8d;
 
     --c-out: #2e2873;
     --c-out-fg: #f5f3ff;
@@ -134,6 +137,7 @@
   --color-accent-soft: var(--c-accent-soft);
   --color-accent-text: var(--c-accent-text);
   --color-on-accent: var(--c-on-accent);
+  --color-danger: var(--c-danger);
   --color-out: var(--c-out);
   --color-out-fg: var(--c-out-fg);
 
@@ -307,4 +311,98 @@
 }
 [data-intro] .intro-status {
   opacity: 0;
+}
+
+/*
+ * 404 chat: the visitor's address goes out as a message, bounces, and Majd
+ * types a reply. The resting styles are the end state, so with reduced
+ * motion everything is simply there.
+ */
+.nf-sending,
+.nf-typing {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nf-request {
+    animation:
+      nf-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
+      nf-shake 0.4s ease-in-out 0.9s;
+  }
+  .nf-sending {
+    animation: nf-sending 0.9s linear both;
+  }
+  .nf-failed {
+    animation: nf-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
+  }
+  .nf-typing {
+    animation: nf-typing 0.9s linear 1.2s both;
+  }
+  .nf-bar {
+    animation: nf-bar 0.7s ease-in-out infinite;
+  }
+  .nf-bar:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .nf-bar:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .nf-bar:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  /* Delays are set inline, one step per reply. */
+  .nf-reply {
+    animation: nf-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes nf-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+}
+@keyframes nf-shake {
+  20% {
+    translate: -5px;
+  }
+  40% {
+    translate: 5px;
+  }
+  60% {
+    translate: -3px;
+  }
+  80% {
+    translate: 2px;
+  }
+}
+@keyframes nf-sending {
+  0%,
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes nf-typing {
+  0% {
+    opacity: 0;
+  }
+  5%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes nf-bar {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }

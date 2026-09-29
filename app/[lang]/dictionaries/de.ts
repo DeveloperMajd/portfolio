@@ -231,6 +231,16 @@ export const de: Dictionary = {
       { label: "Sprachen", value: "Deutsch (C1), Englisch (C1), Arabisch (Muttersprache)" },
     ],
   },
+  notFound: {
+    title: "Seite nicht gefunden",
+    sending: "Wird gesendet …",
+    failed: "Nicht zugestellt",
+    messages: [
+      "Unter dieser Adresse gibt es keine Seite. Vielleicht ist der Link veraltet oder vertippt.",
+      "Hier geht es weiter:",
+    ],
+    home: "Startseite",
+  },
   legal: {
     nav: "Rechtliches",
     impressum: { link: "Impressum", title: "Impressum" },

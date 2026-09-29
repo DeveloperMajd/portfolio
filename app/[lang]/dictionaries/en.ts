@@ -229,6 +229,16 @@ export const en = {
       { label: "Languages", value: "German (C1), English (C1), Arabic (native)" },
     ],
   },
+  notFound: {
+    title: "Page not found",
+    sending: "Sending…",
+    failed: "Not delivered",
+    messages: [
+      "There’s no page at this address. The link may be old or mistyped.",
+      "Here’s where you can go instead:",
+    ],
+    home: "Homepage",
+  },
   legal: {
     nav: "Legal",
     impressum: { link: "Legal notice", title: "Legal notice" },
