@@ -240,6 +240,55 @@
   .btn-secondary:hover {
     border-color: var(--c-line-3);
   }
+
+  /* Impressum and Datenschutzerklärung. */
+  .legal h2 {
+    margin-top: 3rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  .legal h3 {
+    margin-top: 2rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+  .legal :is(p, ul, address) {
+    margin-top: 1rem;
+    color: var(--c-fg-2);
+    line-height: 1.7;
+  }
+  .legal h1 + :is(p, address) {
+    margin-top: 2rem;
+  }
+  .legal address {
+    font-style: normal;
+  }
+  .legal ul {
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+  .legal li + li {
+    margin-top: 0.5rem;
+  }
+  .legal strong {
+    color: var(--c-fg);
+    font-weight: 600;
+  }
+  .legal code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--c-fg);
+  }
+  .legal a {
+    color: var(--c-accent-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+  }
 }
 
 /*

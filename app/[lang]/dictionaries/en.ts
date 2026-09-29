@@ -229,6 +229,11 @@ export const en = {
       { label: "Languages", value: "German (C1), English (C1), Arabic (native)" },
     ],
   },
+  legal: {
+    nav: "Legal",
+    impressum: { link: "Legal notice", title: "Legal notice" },
+    privacy: { link: "Privacy policy", title: "Privacy policy" },
+  },
 };
 
 export type Dictionary = typeof en;

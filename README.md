@@ -14,7 +14,8 @@ npm run lint
 | What | Where |
 | --- | --- |
 | All page text, EN and DE | `app/[lang]/dictionaries/en.ts`, `de.ts` (`de` is typed against `en`, so a missing key fails the build) |
-| Email, GitHub, LinkedIn, Calendly, CV per language | `lib/site.ts` |
+| Email, phone, postal address, GitHub, LinkedIn, Calendly, CV per language | `lib/site.ts` |
+| Impressum and Datenschutz (both languages, `noindex`) | `app/[lang]/impressum/page.tsx`, `app/[lang]/datenschutz/content.tsx` |
 | Colours, fonts, radii | `app/globals.css` (tokens copied from RTM's Signal design system) |
 | Hero chat intro | `components/hero/ChatIntro.tsx` |
 | Designo architecture diagram | `components/work/DesignoDiagram.tsx` |

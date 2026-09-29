@@ -231,4 +231,9 @@ export const de: Dictionary = {
       { label: "Sprachen", value: "Deutsch (C1), Englisch (C1), Arabisch (Muttersprache)" },
     ],
   },
+  legal: {
+    nav: "Rechtliches",
+    impressum: { link: "Impressum", title: "Impressum" },
+    privacy: { link: "Datenschutz", title: "Datenschutzerklärung" },
+  },
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { BootScript } from "@/components/BootScript";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MotionProvider } from "@/components/MotionProvider";
 import { isLocale, locales } from "@/lib/i18n";
@@ -71,6 +72,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <MotionProvider>
           <Header lang={lang} nav={dict.nav} />
           <main id="main">{children}</main>
+          <Footer lang={lang} legal={dict.legal} />
         </MotionProvider>
       </body>
     </html>
