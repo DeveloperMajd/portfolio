@@ -5,7 +5,7 @@ Personal portfolio of Majd Kalthoum. Next.js 16 (App Router, static), Tailwind C
 ```bash
 npm install
 npm run dev     # http://localhost:3000 (redirects to /en or /de)
-npm run build   # every page is prerendered
+npm run build   # every page is prerendered; only unknown URLs under /en and /de render on demand, as a 404
 npm run lint
 ```
 
