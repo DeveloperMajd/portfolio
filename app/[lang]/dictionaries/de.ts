@@ -185,7 +185,8 @@ export const de: Dictionary = {
       {
         title: "Frontend",
         items: [
-          { name: "React und TypeScript", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
+          { name: "React", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
+          { name: "TypeScript", where: "RTM, Designo, Aleks & Shantu" },
           { name: "Next.js", where: "Designo, Aleks & Shantu" },
           { name: "Tailwind CSS und SCSS", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
           { name: "Motion (Framer Motion)", where: "Diese Website, RTM, Designo, Aleks & Shantu" },
