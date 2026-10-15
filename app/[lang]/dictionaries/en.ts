@@ -183,10 +183,10 @@ export const en = {
       {
         title: "Frontend",
         items: [
-          { name: "React and TypeScript", where: "RTM, Designo, Aleks & Shantu" },
+          { name: "React and TypeScript", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
           { name: "Next.js", where: "Designo, Aleks & Shantu" },
-          { name: "Tailwind CSS and SCSS", where: "RTM, Designo, Radscheit" },
-          { name: "Motion (Framer Motion)", where: "This site, Designo, Aleks & Shantu" },
+          { name: "Tailwind CSS and SCSS", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
+          { name: "Motion (Framer Motion)", where: "This site, RTM, Designo, Aleks & Shantu" },
           { name: "Vue.js and Nuxt", where: "Jobvector" },
           { name: "Accessibility (WCAG)", where: "RTM, Aleks & Shantu" },
         ],
@@ -196,8 +196,8 @@ export const en = {
         items: [
           { name: "Laravel and PHP", where: "RTM, Radscheit" },
           { name: "Laravel Reverb and Echo", where: "RTM" },
-          { name: "Node.js", where: "Aleks & Shantu" },
-          { name: "REST APIs", where: "RTM, Designo, Radscheit" },
+          { name: "Node.js", where: "Radscheit, Aleks & Shantu" },
+          { name: "REST APIs", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
           { name: "Sanctum and Google OAuth", where: "RTM" },
           { name: "Strapi and headless WordPress", where: "Designo, Radscheit, Aleks & Shantu" },
         ],

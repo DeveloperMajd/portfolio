@@ -185,10 +185,10 @@ export const de: Dictionary = {
       {
         title: "Frontend",
         items: [
-          { name: "React und TypeScript", where: "RTM, Designo, Aleks & Shantu" },
+          { name: "React und TypeScript", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
           { name: "Next.js", where: "Designo, Aleks & Shantu" },
-          { name: "Tailwind CSS und SCSS", where: "RTM, Designo, Radscheit" },
-          { name: "Motion (Framer Motion)", where: "Diese Website, Designo, Aleks & Shantu" },
+          { name: "Tailwind CSS und SCSS", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
+          { name: "Motion (Framer Motion)", where: "Diese Website, RTM, Designo, Aleks & Shantu" },
           { name: "Vue.js und Nuxt", where: "Jobvector" },
           { name: "Barrierefreiheit (WCAG)", where: "RTM, Aleks & Shantu" },
         ],
@@ -198,8 +198,8 @@ export const de: Dictionary = {
         items: [
           { name: "Laravel und PHP", where: "RTM, Radscheit" },
           { name: "Laravel Reverb und Echo", where: "RTM" },
-          { name: "Node.js", where: "Aleks & Shantu" },
-          { name: "REST-APIs", where: "RTM, Designo, Radscheit" },
+          { name: "Node.js", where: "Radscheit, Aleks & Shantu" },
+          { name: "REST-APIs", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
           { name: "Sanctum und Google OAuth", where: "RTM" },
           { name: "Strapi und Headless-WordPress", where: "Designo, Radscheit, Aleks & Shantu" },
         ],
