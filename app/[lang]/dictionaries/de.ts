@@ -197,7 +197,8 @@ export const de: Dictionary = {
       {
         title: "Backend und Echtzeit",
         items: [
-          { name: "Laravel und PHP", where: "RTM, Radscheit, Aleks & Shantu" },
+          { name: "Laravel", where: "RTM" },
+          { name: "PHP", where: "RTM, Radscheit, Aleks & Shantu" },
           { name: "Laravel Reverb und Echo", where: "RTM" },
           { name: "Node.js", where: "Radscheit, Aleks & Shantu" },
           { name: "REST-APIs", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
