@@ -195,7 +195,7 @@ export const en = {
       {
         title: "Backend and real-time",
         items: [
-          { name: "Laravel and PHP", where: "RTM, Radscheit" },
+          { name: "Laravel and PHP", where: "RTM, Radscheit, Aleks & Shantu" },
           { name: "Laravel Reverb and Echo", where: "RTM" },
           { name: "Node.js", where: "Radscheit, Aleks & Shantu" },
           { name: "REST APIs", where: "RTM, Designo, Radscheit, Aleks & Shantu" },
