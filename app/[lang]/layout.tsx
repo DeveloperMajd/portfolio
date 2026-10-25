@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -74,6 +75,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           <main id="main">{children}</main>
           <Footer lang={lang} legal={dict.legal} />
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );

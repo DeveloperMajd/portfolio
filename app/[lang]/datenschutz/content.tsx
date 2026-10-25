@@ -14,8 +14,8 @@ export const content = {
     <>
       <p>
         This page explains what personal data is processed when you visit developermajd.com, why, and on what legal
-        basis. In short: the site uses no analytics or tracking tools, shows no ads and sets no cookies that would need
-        your consent.
+        basis. In short: the site counts visits with a cookie-free analytics tool, shows no ads and sets no cookies that
+        would need your consent.
       </p>
 
       <h2>Controller</h2>
@@ -49,6 +49,21 @@ export const content = {
       <p>
         Every file on this site, fonts included, comes from Vercel. Your browser does not connect to Google Fonts or
         any other third party when you visit.
+      </p>
+
+      <h2>Visitor statistics</h2>
+      <p>
+        To see how many people visit the site and which pages they read, I use Vercel Web Analytics, a service of the
+        same provider that hosts the site (Vercel Inc., address above). It sets no cookies and stores nothing on your
+        device. It records the page visited, the referrer, your browser, operating system and device type, and your
+        country. Visits are told apart by an anonymous value that is derived from the request and changes every day,
+        so you cannot be recognised across days or across other websites. Your IP address is not stored.
+      </p>
+      <p>
+        The legal basis is Art. 6(1)(f) GDPR; my legitimate interest is knowing whether the site is being read and
+        which content is of interest. Vercel processes this data on my behalf under the same data processing agreement
+        and the same EU-U.S. Data Privacy Framework certification as described under hosting. You can object to this
+        processing at any time, see the right to object below.
       </p>
 
       <h2>Storage in your browser</h2>
@@ -142,15 +157,15 @@ export const content = {
         but without the connection data described under hosting, the site cannot be displayed. There is no automated
         decision-making or profiling.
       </p>
-      <p>Last updated: September 2026</p>
+      <p>Last updated: October 2026</p>
     </>
   ),
   de: (
     <>
       <p>
         Hier erfahren Sie, welche personenbezogenen Daten beim Besuch von developermajd.com verarbeitet werden, wozu
-        und auf welcher Rechtsgrundlage. Kurz gesagt: Die Website nutzt keine Analyse- oder Tracking-Werkzeuge, zeigt
-        keine Werbung und setzt keine Cookies, für die Ihre Einwilligung nötig wäre.
+        und auf welcher Rechtsgrundlage. Kurz gesagt: Die Website zählt Besuche mit einem cookielosen Analyse-Werkzeug,
+        zeigt keine Werbung und setzt keine Cookies, für die Ihre Einwilligung nötig wäre.
       </p>
 
       <h2>Verantwortlicher</h2>
@@ -189,6 +204,24 @@ export const content = {
       <p>
         Alle Dateien dieser Website, auch die Schriftarten, kommen von Vercel. Ihr Browser verbindet sich beim Besuch
         weder mit Google Fonts noch mit anderen Drittanbietern.
+      </p>
+
+      <h2>Besucherstatistik</h2>
+      <p>
+        Um zu sehen, wie viele Menschen die Website besuchen und welche Seiten sie lesen, nutze ich Vercel Web
+        Analytics, einen Dienst des Anbieters, bei dem die Website auch gehostet wird (Vercel Inc., Anschrift siehe
+        oben). Der Dienst setzt keine Cookies und speichert nichts auf Ihrem Gerät. Erfasst werden die aufgerufene
+        Seite, der Referrer, Browser, Betriebssystem und Gerätetyp sowie Ihr Land. Besuche werden über einen
+        anonymen Wert unterschieden, der aus der Anfrage abgeleitet wird und sich täglich ändert; Sie können damit
+        weder über mehrere Tage noch über andere Websites hinweg wiedererkannt werden. Ihre IP-Adresse wird nicht
+        gespeichert.
+      </p>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; mein berechtigtes Interesse ist zu wissen, ob die Website
+        gelesen wird und welche Inhalte auf Interesse stoßen. Vercel verarbeitet diese Daten in meinem Auftrag, auf
+        Grundlage desselben Auftragsverarbeitungsvertrags und derselben Zertifizierung nach dem EU-US Data Privacy
+        Framework wie unter „Hosting und Server-Logfiles“ beschrieben. Sie können dieser Verarbeitung jederzeit
+        widersprechen, siehe Widerspruchsrecht unten.
       </p>
 
       <h2>Speicherung im Browser</h2>
@@ -288,7 +321,7 @@ export const content = {
         kann die Website allerdings nicht angezeigt werden. Eine automatisierte Entscheidungsfindung oder ein Profiling
         findet nicht statt.
       </p>
-      <p>Stand: September 2026</p>
+      <p>Stand: Oktober 2026</p>
     </>
   ),
 } satisfies Record<Locale, ReactNode>;
